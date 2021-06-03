@@ -58,7 +58,7 @@ export default {
 
   methods: {
     startSlide: function () {
-      this.timer = setInterval(this.next, 4000);
+      this.timer = setInterval(this.next, 6000);
     },
 
     selected: function (index) {

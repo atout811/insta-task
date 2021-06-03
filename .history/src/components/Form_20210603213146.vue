@@ -58,13 +58,11 @@
         />
         <div v-if="passError.length" class="error">{{ passError }}</div>
       </div>
-      <div v-if="loginError.length" class="error">{{ loginError }}</div>
       <div
         v-bind:class="{
           active: !(passError.length && emailError.length),
           disabled: passError.length || emailError.length,
         }"
-        v-on:click="handleLogin"
       >
         <span class="txt">Login</span>
       </div>
@@ -94,18 +92,7 @@ export default {
       password: "",
       emailError: "",
       passError: "",
-      loginError: "",
       disabled: false,
-      DB: [
-        { email: "mohamed@instabug.com", password: "12345678" },
-        { email: "mohamed1@instabug.com", password: "12345678" },
-        { email: "mohamed2@instabug.com", password: "12345678" },
-        { email: "mohamed3@instabug.com", password: "12345678" },
-        { email: "mohamed4@instabug.com", password: "12345678" },
-        { email: "mohamed5@instabug.com", password: "12345678" },
-        { email: "mohamed6@instabug.com", password: "12345678" },
-        { email: "mohamed7@instabug.com", password: "12345678" },
-      ],
     };
   },
   watch: {
@@ -126,18 +113,6 @@ export default {
           "The password must contain at least 1 uppercase letters and one number");
 
       this.passError = "";
-    },
-  },
-  methods: {
-    handleLogin: function (email, password) {
-      for (let i = 0; i < this.DB.length; i++) {
-        if (this.DB[i].email == email && this.DB.password[i] == password) {
-          localStorage.email = email;
-          localStorage.password = password;
-          return true;
-        }
-      }
-      this.loginError = "you email and/or password are incorrect";
     },
   },
 };
@@ -266,20 +241,7 @@ export default {
   grid-auto-rows: minmax(40px, auto);
   color: white;
 }
-.active:active {
-  cursor: pointer;
-  width: 100%;
-  height: 40px;
-  margin-top: 10px;
-  background-color: #1e529b;
-  border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  grid-auto-rows: minmax(40px, auto);
-  color: white;
-}
-.disabled {
+.dsiabled {
   width: 100%;
   height: 40px;
   margin-top: 10px;

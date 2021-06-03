@@ -58,13 +58,12 @@
         />
         <div v-if="passError.length" class="error">{{ passError }}</div>
       </div>
-      <div v-if="loginError.length" class="error">{{ loginError }}</div>
       <div
         v-bind:class="{
           active: !(passError.length && emailError.length),
           disabled: passError.length || emailError.length,
         }"
-        v-on:click="handleLogin"
+        v-on:click="test"
       >
         <span class="txt">Login</span>
       </div>
@@ -94,7 +93,6 @@ export default {
       password: "",
       emailError: "",
       passError: "",
-      loginError: "",
       disabled: false,
       DB: [
         { email: "mohamed@instabug.com", password: "12345678" },
@@ -129,16 +127,7 @@ export default {
     },
   },
   methods: {
-    handleLogin: function (email, password) {
-      for (let i = 0; i < this.DB.length; i++) {
-        if (this.DB[i].email == email && this.DB.password[i] == password) {
-          localStorage.email = email;
-          localStorage.password = password;
-          return true;
-        }
-      }
-      this.loginError = "you email and/or password are incorrect";
-    },
+    handleLogin: function (email, password) {},
   },
 };
 </script>

@@ -64,7 +64,7 @@
           active: !(passError.length && emailError.length),
           disabled: passError.length || emailError.length,
         }"
-        v-on:click="handleLogin"
+        v-on:click="test"
       >
         <span class="txt">Login</span>
       </div>

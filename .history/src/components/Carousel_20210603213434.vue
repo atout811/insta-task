@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="width: 60%">
     <transition-group name="fade" tag="div">
       <div class="carousel" v-for="i in [currentIndex]" :key="i">
         <img :src="currentImg" />
@@ -58,7 +58,7 @@ export default {
 
   methods: {
     startSlide: function () {
-      this.timer = setInterval(this.next, 4000);
+      this.timer = setInterval(this.next, 6000);
     },
 
     selected: function (index) {

@@ -24,48 +24,31 @@
       <span class="or">OR</span>
       <div class="line" />
     </div>
-    <FForm class="form">
+    <Form class="form">
       <div class="email">
         <span>Work Email</span>
-        <input
-          v-bind:class="{
-            input: !emailError.length,
-            inputError: emailError.length,
-          }"
+        <Field
           name="email"
           type="email"
-          class="input"
+          :rules="validateEmail"
+          <!-- class="input" -->
           placeholder="you@company.com"
-          v-model="email"
         />
-        <div v-if="emailError.length" class="error">{{ emailError }}</div>
       </div>
       <div class="password">
         <div class="pass">
           <span>Password</span>
-
+          {{ password }}
           <a style="color: #787878" href="#">Forget Your Password?</a>
         </div>
         <input
-          v-bind:class="{
-            input: passError.length,
-            inputError: passError.length,
-          }"
           class="input"
-          type="password"
+          type="text"
           placeholder="8+ Characters"
           v-model="password"
         />
-        <div v-if="passError.length" class="error">{{ passError }}</div>
       </div>
-      <div v-if="loginError.length" class="error">{{ loginError }}</div>
-      <div
-        v-bind:class="{
-          active: !(passError.length && emailError.length),
-          disabled: passError.length || emailError.length,
-        }"
-        v-on:click="handleLogin"
-      >
+      <div class="login">
         <span class="txt">Login</span>
       </div>
       <div class="signup">
@@ -74,7 +57,7 @@
         </div>
         <a class="tc" href="#">Login via SSO </a>
       </div>
-    </FForm>
+    </Form>
     <span style="margin-top: 10px; color: #787878"
       >Trusted by the top companies</span
     >
@@ -85,60 +68,19 @@
 </template>
 
 <script>
+import { Form, Field } from "vee-validate";
+
 export default {
-  components: {},
+  components: {
+    Form,
+    Field,
+  },
   name: "Form",
   data() {
     return {
       email: "",
       password: "",
-      emailError: "",
-      passError: "",
-      loginError: "",
-      disabled: false,
-      DB: [
-        { email: "mohamed@instabug.com", password: "12345678" },
-        { email: "mohamed1@instabug.com", password: "12345678" },
-        { email: "mohamed2@instabug.com", password: "12345678" },
-        { email: "mohamed3@instabug.com", password: "12345678" },
-        { email: "mohamed4@instabug.com", password: "12345678" },
-        { email: "mohamed5@instabug.com", password: "12345678" },
-        { email: "mohamed6@instabug.com", password: "12345678" },
-        { email: "mohamed7@instabug.com", password: "12345678" },
-      ],
     };
-  },
-  watch: {
-    email: function (value) {
-      if (!value) return (this.emailError = "");
-
-      if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value))
-        return (this.emailError = "Enter a valid email address");
-
-      this.emailError = "";
-    },
-    password: function (value) {
-      if (!value) return (this.passError = "");
-      if (value.length < 8)
-        return (this.passError = "password must be six characters or more");
-      if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/i.test(value))
-        return (this.passError =
-          "The password must contain at least 1 uppercase letters and one number");
-
-      this.passError = "";
-    },
-  },
-  methods: {
-    handleLogin: function (email, password) {
-      for (let i = 0; i < this.DB.length; i++) {
-        if (this.DB[i].email == email && this.DB.password[i] == password) {
-          localStorage.email = email;
-          localStorage.password = password;
-          return true;
-        }
-      }
-      this.loginError = "you email and/or password are incorrect";
-    },
   },
 };
 </script>
@@ -253,37 +195,12 @@ export default {
   display: flex;
   justify-content: space-between;
 }
-.active {
+.login {
   cursor: pointer;
   width: 100%;
   height: 40px;
   margin-top: 10px;
   background-color: #3084fc;
-  border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  grid-auto-rows: minmax(40px, auto);
-  color: white;
-}
-.active:active {
-  cursor: pointer;
-  width: 100%;
-  height: 40px;
-  margin-top: 10px;
-  background-color: #1e529b;
-  border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  grid-auto-rows: minmax(40px, auto);
-  color: white;
-}
-.disabled {
-  width: 100%;
-  height: 40px;
-  margin-top: 10px;
-  background-color: #979797;
   border-radius: 5px;
   display: flex;
   justify-content: center;
@@ -305,14 +222,5 @@ a {
 }
 .tc {
   color: rgb(31, 151, 221);
-}
-.error {
-  color: red;
-}
-.inputError {
-  border: red 1px solid;
-  padding: 12px 20px;
-  border-radius: 5px;
-  margin-top: 5px;
 }
 </style>

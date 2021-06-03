@@ -1,35 +1,25 @@
 <template>
-  <div>
+  <div style="width: 100%">
     <transition-group name="fade" tag="div">
       <div class="carousel" v-for="i in [currentIndex]" :key="i">
         <img :src="currentImg" />
         <div class="text">{{ currentLabel }}</div>
       </div>
     </transition-group>
-
-    <div class="dotted">
-      <span
-        v-bind:class="{
-          dot: currentIndex != 0,
-          dotSelected: currentIndex == 0,
-        }"
-        @click="selected(0)"
-      ></span>
-      <span
-        v-bind:class="{
-          dot: currentIndex != 1,
-          dotSelected: currentIndex == 1,
-        }"
-        @click="selected(1)"
-      ></span>
-      <span
-        v-bind:class="{
-          dot: currentIndex != 2,
-          dotSelected: currentIndex == 2,
-        }"
-        @click="selected(2)"
-      ></span>
-    </div>
+  </div>
+  <div class="dotted">
+    <span
+      v-bind:class="{ dot: currentIndex != 0, dotSelected: currentIndex == 0 }"
+      @click="selected(0)"
+    ></span>
+    <span
+      v-bind:class="{ dot: currentIndex != 1, dotSelected: currentIndex == 1 }"
+      @click="selected(1)"
+    ></span>
+    <span
+      v-bind:class="{ dot: currentIndex != 2, dotSelected: currentIndex == 2 }"
+      @click="selected(2)"
+    ></span>
   </div>
 </template>
 
@@ -58,7 +48,7 @@ export default {
 
   methods: {
     startSlide: function () {
-      this.timer = setInterval(this.next, 4000);
+      this.timer = setInterval(this.next, 6000);
     },
 
     selected: function (index) {
