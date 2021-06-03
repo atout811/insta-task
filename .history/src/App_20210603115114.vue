@@ -4,18 +4,13 @@
 
 <script>
 import Welcome from "./components/Welcome";
-
+import Carousel from "./components/Carousel";
 import Login from "./components/Login";
 export default {
   name: "App",
-  components: { Login },
+  components: [Login, Carousel],
 };
 </script>
 
 <style lang="scss">
-html,
-body {
-  margin: 0px;
-  height: 100%;
-}
 </style>

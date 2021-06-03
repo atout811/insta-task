@@ -1,9 +1,7 @@
 <template>
   <div class="container">
     <div class="crousel">
-      <div class="holder">
-        <Carousel />
-      </div>
+      <Carousel />
     </div>
     <div class="form">Helloo</div>
   </div>
@@ -23,17 +21,5 @@ export default {
 }
 .crousel {
   width: 50vw;
-  height: 100vh;
-  background-color: #082474;
-}
-.holder {
-  margin-top: 15%;
-}
-.form {
-  width: 50vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 </style>

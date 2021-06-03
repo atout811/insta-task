@@ -2,6 +2,7 @@
   <transition-group name="fade" tag="div">
     <div class="carousel" v-for="i in [currentIndex]" :key="i">
       <img :src="currentImg" />
+
       <div class="text">{{ currentLabel }}</div>
     </div>
   </transition-group>
@@ -50,11 +51,11 @@ export default {
     },
 
     selected: function (index) {
+      console.log(index);
       this.currentIndex = index;
     },
 
     next: function () {
-      if (this.currentIndex == 2) this.currentIndex = -1;
       this.currentIndex += 1;
     },
     prev: function () {
@@ -79,7 +80,6 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: white;
 }
 .text {
   margin: 20px;
@@ -96,7 +96,7 @@ export default {
   height: 25px;
   width: 25px;
   margin: 10px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
   border-radius: 50%;
   display: inline-block;
 }
@@ -106,7 +106,7 @@ export default {
   width: 25px;
   margin: 10px;
   // background-color: rgb(0, 0, 0);
-  border: 3px solid rgb(255, 255, 255);
+  border: 3px solid black;
   border-radius: 50%;
   display: inline-block;
 }

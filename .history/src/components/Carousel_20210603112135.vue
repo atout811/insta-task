@@ -2,22 +2,13 @@
   <transition-group name="fade" tag="div">
     <div class="carousel" v-for="i in [currentIndex]" :key="i">
       <img :src="currentImg" />
-      <div class="text">{{ currentLabel }}</div>
+      <div class="text">Accelerate Your Entire Mobile Team Workflow</div>
     </div>
   </transition-group>
   <div class="dotted">
-    <span
-      v-bind:class="{ dot: currentIndex != 0, dotSelected: currentIndex == 0 }"
-      @click="selected(0)"
-    ></span>
-    <span
-      v-bind:class="{ dot: currentIndex != 1, dotSelected: currentIndex == 1 }"
-      @click="selected(1)"
-    ></span>
-    <span
-      v-bind:class="{ dot: currentIndex != 2, dotSelected: currentIndex == 2 }"
-      @click="selected(2)"
-    ></span>
+    <span class="dot 1" @click="selected(1)"></span>
+    <span class="dot 2" @click="selected(2)"></span>
+    <span class="dot 3" @click="selected(3)"></span>
   </div>
 </template>
 
@@ -31,11 +22,7 @@ export default {
         "https://instabug.com/assets/images/svgs/heroes/Products-bug-reporting.svg",
         "https://instabug.com/assets/images/svgs/heroes/Products-crash-reporting.svg",
       ],
-      labels: [
-        "Accelerate Your Entire Mobile Team Workflow",
-        "The Most Comprehensive Bug Reporting Tool for Mobile Apps",
-        "Secure Crash Reporting With Real-Time Alerts",
-      ],
+      labels: [],
       timer: null,
       currentIndex: 0,
     };
@@ -50,11 +37,11 @@ export default {
     },
 
     selected: function (index) {
+      console.log(index);
       this.currentIndex = index;
     },
 
     next: function () {
-      if (this.currentIndex == 2) this.currentIndex = -1;
       this.currentIndex += 1;
     },
     prev: function () {
@@ -66,9 +53,6 @@ export default {
     currentImg: function () {
       return this.images[Math.abs(this.currentIndex) % this.images.length];
     },
-    currentLabel: function () {
-      return this.labels[Math.abs(this.currentIndex) % this.labels.length];
-    },
   },
 };
 </script>
@@ -79,34 +63,22 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: white;
 }
 .text {
   margin: 20px;
   font-size: 2em;
-  text-align: center;
 }
 .dotted {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.dotSelected {
-  cursor: pointer;
-  height: 25px;
-  width: 25px;
-  margin: 10px;
-  background-color: rgb(255, 255, 255);
-  border-radius: 50%;
-  display: inline-block;
-}
 .dot {
   cursor: pointer;
   height: 25px;
   width: 25px;
   margin: 10px;
-  // background-color: rgb(0, 0, 0);
-  border: 3px solid rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
   border-radius: 50%;
   display: inline-block;
 }
