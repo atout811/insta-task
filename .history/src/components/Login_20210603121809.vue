@@ -6,17 +6,17 @@
       </div>
     </div>
     <div class="form">
-      <Form />
+      <img class="logo" src="../assets/Instabug-Logo-H_color1.png" />
+      <span>Log in to Instabug</span>
     </div>
   </div>
 </template>
 
 <script>
 import Carousel from "./Carousel";
-import Form from "./Form";
 export default {
   name: "Login",
-  components: { Carousel, Form },
+  components: { Carousel },
 };
 </script>
 
@@ -38,5 +38,8 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.logo {
+  margin: 50px;
 }
 </style>

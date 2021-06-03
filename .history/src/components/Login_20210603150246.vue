@@ -39,4 +39,11 @@ export default {
   justify-content: center;
   align-items: center;
 }
+.logo {
+  margin: 50px;
+}
+.label {
+  font-size: 40px;
+  color: #535353;
+}
 </style>

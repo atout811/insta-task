@@ -5,18 +5,15 @@
         <Carousel />
       </div>
     </div>
-    <div class="form">
-      <Form />
-    </div>
+    <div class="form"><img src:'../assets/instalogo.svg'</div>
   </div>
 </template>
 
 <script>
 import Carousel from "./Carousel";
-import Form from "./Form";
 export default {
   name: "Login",
-  components: { Carousel, Form },
+  components: { Carousel },
 };
 </script>
 

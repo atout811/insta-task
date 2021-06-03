@@ -1,0 +1,35 @@
+<template>
+  <div class="wrap">
+    <img class="logo" src="../assets/Instabug-Logo-H_color1.png" />
+    <span class="label">Log in to Instabug</span>
+    <div class="button"><span>Google</span></div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "Form",
+};
+</script>
+
+<style lang="scss">
+.logo {
+  margin: 50px;
+}
+.label {
+  font-size: 40px;
+  color: #535353;
+}
+.button {
+  width: auto;
+  background-color: #3084fc;
+  border-radius: 20%;
+  display: flex;
+  justify-content: center;
+}
+.wrap {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+}
+</style>

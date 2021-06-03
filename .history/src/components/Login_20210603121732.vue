@@ -6,17 +6,17 @@
       </div>
     </div>
     <div class="form">
-      <Form />
+      <img src="../assets/Instabug-Logo-H_color1.png" />
+      <span>Log in to Instabug</span>
     </div>
   </div>
 </template>
 
 <script>
 import Carousel from "./Carousel";
-import Form from "./Form";
 export default {
   name: "Login",
-  components: { Carousel, Form },
+  components: { Carousel },
 };
 </script>
 
