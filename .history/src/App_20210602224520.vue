@@ -1,13 +1,12 @@
 <template>
-  <Carousel />
+  <Welcome />
 </template>
 
 <script>
 import Welcome from "./components/Welcome";
-import Carousel from "./components/Carousel";
 export default {
   name: "App",
-  components: { Carousel },
+  components: { Welcome },
 };
 </script>
 
