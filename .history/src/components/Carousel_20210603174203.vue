@@ -113,6 +113,6 @@ export default {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: 0;
+  transition: 0 ease;
 }
 </style>

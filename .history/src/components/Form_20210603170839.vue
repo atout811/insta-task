@@ -32,7 +32,7 @@
       <div class="password">
         <div class="pass">
           <span>Password</span>
-          <a style="color: #787878" href="#">Forget Your Password?</a>
+          <a href="#">Forget Your Password?</a>
         </div>
         <input class="input" type="text" placeholder="8+ Characters" />
       </div>
@@ -46,9 +46,7 @@
         <a class="tc" href="#">Login via SSO </a>
       </div>
     </div>
-    <span style="margin-top: 10px; color: #787878"
-      >Trusted by the top companies</span
-    >
+    <span style="margin-top: 10px">Trusted by the top companies</span>
     <div class="footer">
       <img style="width: 100%" src="../assets/Screenshot_3.jpg" />
     </div>
@@ -122,7 +120,6 @@ export default {
   flex-direction: column;
   width: 75%;
   align-items: center;
-  color: #989898;
 }
 .txt {
   grid-row: 1;
@@ -142,8 +139,6 @@ export default {
 .or {
   margin-left: 20px;
   margin-right: 20px;
-  font-weight: bold;
-  color: rgb(73, 73, 73);
 }
 .form {
   display: flex;
@@ -195,8 +190,5 @@ hr {
 }
 a {
   text-decoration: none;
-}
-.tc {
-  color: rgb(31, 151, 221);
 }
 </style>

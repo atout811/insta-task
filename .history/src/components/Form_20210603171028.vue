@@ -122,7 +122,6 @@ export default {
   flex-direction: column;
   width: 75%;
   align-items: center;
-  color: #989898;
 }
 .txt {
   grid-row: 1;
@@ -142,8 +141,6 @@ export default {
 .or {
   margin-left: 20px;
   margin-right: 20px;
-  font-weight: bold;
-  color: rgb(73, 73, 73);
 }
 .form {
   display: flex;
@@ -197,6 +194,6 @@ a {
   text-decoration: none;
 }
 .tc {
-  color: rgb(31, 151, 221);
+  color: rgb(8, 77, 224);
 }
 </style>

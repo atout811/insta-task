@@ -110,9 +110,12 @@ export default {
   border-radius: 50%;
   display: inline-block;
 }
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: 0;
+.list-enter-active,
+.list-leave-active {
+  transition: all 1s;
+}
+.list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  transform: translateY(30px);
 }
 </style>

@@ -197,6 +197,6 @@ a {
   text-decoration: none;
 }
 .tc {
-  color: rgb(31, 151, 221);
+  color: rgb(8, 77, 224);
 }
 </style>

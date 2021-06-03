@@ -113,6 +113,17 @@ export default {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: 0;
+  transition: all 1s ease-out;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  transform: translate(100%, 0);
+}
+.fade-leave-to {
+  transform: translate(-100%, 0);
+}
+.flip-list-move {
+  transition: transform 0.8s ease;
 }
 </style>

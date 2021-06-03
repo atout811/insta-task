@@ -114,5 +114,8 @@ export default {
 .fade-enter-active,
 .fade-leave-active {
   transition: 0;
+ 
+}
+.
 }
 </style>

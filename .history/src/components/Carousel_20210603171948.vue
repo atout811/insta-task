@@ -110,9 +110,8 @@ export default {
   border-radius: 50%;
   display: inline-block;
 }
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: 0;
+.carousel-enter-active,
+.carousel-leave-active {
+  transition: all 1s;
 }
 </style>

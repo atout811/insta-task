@@ -110,9 +110,11 @@ export default {
   border-radius: 50%;
   display: inline-block;
 }
-
 .fade-enter-active,
 .fade-leave-active {
-  transition: 0;
+  transition: all 1s;
+}
+.fade-list-move {
+  transition: transform 1s;
 }
 </style>
