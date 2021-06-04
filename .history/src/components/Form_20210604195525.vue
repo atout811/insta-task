@@ -86,16 +86,16 @@
 </template>
 
 <script>
-const DB = [
-  { email: "mohamed@instabug.com", password: "12345678" },
-  { email: "mohamed1@instabug.com", password: "12345678" },
-  { email: "mohamed2@instabug.com", password: "12345678" },
-  { email: "mohamed3@instabug.com", password: "12345678" },
-  { email: "mohamed4@instabug.com", password: "12345678" },
-  { email: "mohamed5@instabug.com", password: "12345678" },
-  { email: "mohamed6@instabug.com", password: "12345678" },
-  { email: "mohamed7@instabug.com", password: "12345678" },
-];
+const DB= [
+    { email: "mohamed@instabug.com", password: "12345678" },
+    { email: "mohamed1@instabug.com", password: "12345678" },
+    { email: "mohamed2@instabug.com", password: "12345678" },
+    { email: "mohamed3@instabug.com", password: "12345678" },
+    { email: "mohamed4@instabug.com", password: "12345678" },
+    { email: "mohamed5@instabug.com", password: "12345678" },
+    { email: "mohamed6@instabug.com", password: "12345678" },
+    { email: "mohamed7@instabug.com", password: "12345678" },
+  ],
 export default {
   components: {},
   name: "Form",
@@ -109,7 +109,7 @@ export default {
       disabled: false,
     };
   },
-
+  
   watch: {
     email: function (value) {
       if (!value) return (this.emailError = "");
@@ -132,9 +132,9 @@ export default {
   },
   methods: {
     handleLogin: function (email, password) {
-      console.log(DB);
-      for (let i = 0; i < DB.length; i++) {
-        if (DB[i].email == email && DB[i].password == password) {
+      console.log(this.DB);
+      for (let i = 0; i < this.DB.length; i++) {
+        if (this.DB[i].email == email && this.DB.password[i] == password) {
           console.log("success");
           localStorage.email = email;
           localStorage.password = password;

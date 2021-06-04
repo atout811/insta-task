@@ -17,8 +17,8 @@ export default {
   },
   methods: {
     handleLogout: function () {
-      localStorage.clear();
-
+      localStorage.clear(email);
+      localStorage.clear(password);
       this.$router.push("login");
     },
   },

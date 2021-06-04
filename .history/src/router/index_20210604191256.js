@@ -14,7 +14,7 @@ const routes = [
     component: Welcome,
   },
   {
-    path: "/:catchAll(.*)",
+    path: "/404",
     name: "notfound",
     component: NotFound,
     // route level code-splitting
@@ -24,7 +24,7 @@ const routes = [
     //   import(/* webpackChunkName: "about" */ "../views/About.vue"),
   },
   {
-    path: "/login",
+    path: "#/login",
     name: "Login",
     component: Login,
   },

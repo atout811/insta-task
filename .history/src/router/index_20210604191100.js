@@ -14,7 +14,7 @@ const routes = [
     component: Welcome,
   },
   {
-    path: "/:catchAll(.*)",
+    path: "/404",
     name: "notfound",
     component: NotFound,
     // route level code-splitting

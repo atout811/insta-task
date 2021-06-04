@@ -9,12 +9,12 @@ const routes = [
     name: "welcome",
     beforeEnter: (to, from, next) => {
       if (localStorage.email && localStorage.password) next();
-      else next({ name: "Login" });
+      else next({ name: "login" });
     },
     component: Welcome,
   },
   {
-    path: "/:catchAll(.*)",
+    path: "/404",
     name: "notfound",
     component: NotFound,
     // route level code-splitting

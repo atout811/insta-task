@@ -8,13 +8,13 @@ const routes = [
     path: "/",
     name: "welcome",
     beforeEnter: (to, from, next) => {
-      if (localStorage.email && localStorage.password) next();
-      else next({ name: "Login" });
+      if (localStorage.email && localStorage.password) next({ name: "login" });
+      else next();
     },
     component: Welcome,
   },
   {
-    path: "/:catchAll(.*)",
+    path: "/404",
     name: "notfound",
     component: NotFound,
     // route level code-splitting
@@ -27,6 +27,10 @@ const routes = [
     path: "/login",
     name: "Login",
     component: Login,
+  },
+  {
+    path: "/*",
+    redirect: "/404",
   },
 ];
 

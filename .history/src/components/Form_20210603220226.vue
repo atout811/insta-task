@@ -59,13 +59,13 @@
         />
         <div v-if="passError.length" class="error">{{ passError }}</div>
       </div>
-
+      <div v-if="loginError.length" class="error">{{ loginError }}</div>
       <div
         v-bind:class="{
           active: !(passError.length && emailError.length),
           disabled: passError.length || emailError.length,
         }"
-        v-on:click="handleLogin(email, password)"
+        v-on:click="handleLogin"
       >
         <span class="txt">Login</span>
       </div>
@@ -86,16 +86,6 @@
 </template>
 
 <script>
-const DB = [
-  { email: "mohamed@instabug.com", password: "12345678" },
-  { email: "mohamed1@instabug.com", password: "12345678" },
-  { email: "mohamed2@instabug.com", password: "12345678" },
-  { email: "mohamed3@instabug.com", password: "12345678" },
-  { email: "mohamed4@instabug.com", password: "12345678" },
-  { email: "mohamed5@instabug.com", password: "12345678" },
-  { email: "mohamed6@instabug.com", password: "12345678" },
-  { email: "mohamed7@instabug.com", password: "12345678" },
-];
 export default {
   components: {},
   name: "Form",
@@ -107,9 +97,18 @@ export default {
       passError: "",
       loginError: "",
       disabled: false,
+      DB: [
+        { email: "mohamed@instabug.com", password: "12345678" },
+        { email: "mohamed1@instabug.com", password: "12345678" },
+        { email: "mohamed2@instabug.com", password: "12345678" },
+        { email: "mohamed3@instabug.com", password: "12345678" },
+        { email: "mohamed4@instabug.com", password: "12345678" },
+        { email: "mohamed5@instabug.com", password: "12345678" },
+        { email: "mohamed6@instabug.com", password: "12345678" },
+        { email: "mohamed7@instabug.com", password: "12345678" },
+      ],
     };
   },
-
   watch: {
     email: function (value) {
       if (!value) return (this.emailError = "");
@@ -123,25 +122,22 @@ export default {
       if (!value) return (this.passError = "");
       if (value.length < 8)
         return (this.passError = "password must be six characters or more");
-      // if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/i.test(value))
-      //   return (this.passError =
-      //     "The password must contain at least 1 uppercase letters and one number");
+      if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/i.test(value))
+        return (this.passError =
+          "The password must contain at least 1 uppercase letters and one number");
 
       this.passError = "";
     },
   },
   methods: {
     handleLogin: function (email, password) {
-      console.log(DB);
-      for (let i = 0; i < DB.length; i++) {
-        if (DB[i].email == email && DB[i].password == password) {
-          console.log("success");
+      for (let i = 0; i < this.DB.length; i++) {
+        if (this.DB[i].email == email && this.DB.password[i] == password) {
           localStorage.email = email;
           localStorage.password = password;
           return true;
         }
       }
-
       this.loginError = "you email and/or password are incorrect";
     },
   },

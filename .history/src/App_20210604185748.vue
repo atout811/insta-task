@@ -1,13 +1,15 @@
 <template>
+  <Welcome />
   <router-view></router-view>
 </template>
 
 <script>
 import Welcome from "./components/Welcome";
 
+import Login from "./components/Login";
 export default {
   name: "App",
-  components: { Welcome },
+  components: { Login },
 };
 </script>
 

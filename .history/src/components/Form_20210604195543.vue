@@ -134,7 +134,7 @@ export default {
     handleLogin: function (email, password) {
       console.log(DB);
       for (let i = 0; i < DB.length; i++) {
-        if (DB[i].email == email && DB[i].password == password) {
+        if (this.DB[i].email == email && this.DB.password[i] == password) {
           console.log("success");
           localStorage.email = email;
           localStorage.password = password;

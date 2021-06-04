@@ -2,7 +2,7 @@
   <div class="parent">
     <img class="logo" src="../assets/Instabug-Logo-H_color1.png" />
     <h1 class="child both">Welcome {{ email }}</h1>
-    <span>Now You can <a v-on:click="handleLogout" href="/">Logout</a></span>
+    <span>Now You can <a href="/">Logout</a></span>
   </div>
 </template>
 
@@ -15,13 +15,6 @@ export default {
       email: localStorage.email,
     };
   },
-  methods: {
-    handleLogout: function () {
-      localStorage.clear();
-
-      this.$router.push("login");
-    },
-  },
 };
 </script>
 
@@ -33,7 +26,8 @@ export default {
   height: 100vh;
   flex-direction: column;
 }
-
+.nav {
+}
 a {
   text-decoration: none;
 }

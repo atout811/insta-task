@@ -1,5 +1,5 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-import Login from "../components/Login";
+import Login from "./components/Login";
 import NotFound from "../components/NotFound";
 import Welcome from "../components/Welcome";
 
@@ -14,7 +14,7 @@ const routes = [
     component: Welcome,
   },
   {
-    path: "/:catchAll(.*)",
+    path: "/404",
     name: "notfound",
     component: NotFound,
     // route level code-splitting

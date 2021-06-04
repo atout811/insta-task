@@ -2,7 +2,7 @@
   <div class="notfound">
     <img src="../assets/notfound.jpg" />
     <span>404 - Page Not Found! </span>
-    <p>Sorry, that page doesn't exist, What would you like to do?</p>
+    <p>Sorry,that page doesn't exist, What would you like to do?</p>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -17,8 +17,5 @@ span {
   font-weight: bold;
   font-size: 2em;
   color: rgb(43, 43, 139);
-}
-p {
-  color: grey;
 }
 </style>
