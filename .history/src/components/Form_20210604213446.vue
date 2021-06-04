@@ -53,7 +53,7 @@
             input: passError.length,
             inputError: passError.length,
           }"
-          class="passinput"
+          class="pass"
           type="password"
           placeholder="8+ Characters"
           v-model="password"
@@ -145,7 +145,7 @@ export default {
         }
       }
 
-      this.loginError = "your email and/or password are incorrect";
+      this.loginError = "you email and/or password are incorrect";
     },
   },
 };
@@ -160,7 +160,7 @@ export default {
   color: #535353;
   margin: 20px;
 }
-.passinput {
+.pass {
   padding: 12px 20px;
   border: 1px solid grey;
   border-radius: 5px;

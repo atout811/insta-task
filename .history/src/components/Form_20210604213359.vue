@@ -35,7 +35,7 @@
           }"
           name="email"
           type="email"
-          class="input"
+          class="pass"
           placeholder="you@company.com"
           v-model="email"
           @keyup.enter="handleLogin(email, password)"
@@ -53,7 +53,7 @@
             input: passError.length,
             inputError: passError.length,
           }"
-          class="passinput"
+          class="input"
           type="password"
           placeholder="8+ Characters"
           v-model="password"
@@ -145,7 +145,7 @@ export default {
         }
       }
 
-      this.loginError = "your email and/or password are incorrect";
+      this.loginError = "you email and/or password are incorrect";
     },
   },
 };
@@ -159,12 +159,6 @@ export default {
   font-size: 40px;
   color: #535353;
   margin: 20px;
-}
-.passinput {
-  padding: 12px 20px;
-  border: 1px solid grey;
-  border-radius: 5px;
-  margin-top: 5px;
 }
 .google {
   cursor: pointer;
@@ -252,6 +246,12 @@ export default {
   width: 100%;
 }
 .input {
+  padding: 12px 20px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+.pass {
   padding: 12px 20px;
   border: 1px solid grey;
   border-radius: 5px;

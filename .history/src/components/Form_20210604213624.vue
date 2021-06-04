@@ -145,7 +145,7 @@ export default {
         }
       }
 
-      this.loginError = "your email and/or password are incorrect";
+      this.loginError = "you email and/or password are incorrect";
     },
   },
 };
